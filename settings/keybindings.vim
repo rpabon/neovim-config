@@ -1,3 +1,8 @@
+let mapleader = " " " map leader to comma
+
+" Space + s saves the file
+nmap <Leader>s :write<Enter>
+
 " Move to the end of yanked text after yank and paste
 nnoremap p p`]
 vnoremap y y`]
@@ -25,6 +30,12 @@ noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 
-"This unsets the last search pattern register by hitting return
-nnoremap <CR> :noh<CR><CR>
+" Unset last search pattern on escape
+map <esc> :noh <CR>
+
+" New line above and below 
+nmap oo m`o<Esc>``j
+nmap OO m`O<Esc>``k
+" nmap oo o<Esc>k
+" nmap OO O<Esc>j
 

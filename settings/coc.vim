@@ -1,3 +1,15 @@
+let g:coc_global_extensions = [
+      \ 'coc-tsserver',
+      \ 'coc-html',
+      \ 'coc-css',
+      \ 'coc-snippets',
+      \ 'coc-prettier',
+      \ 'coc-pairs',
+      \ 'coc-json',
+      \ 'coc-eslint',
+      \ 'coc-spell-checker',
+      \ ]
+
 let g:coc_user_config = {
         \ "angular.trace.server": v:true,
         \ "suggest.enablePreview": v:true,
@@ -12,19 +24,6 @@ let g:coc_user_config = {
         \ "coc.preferences.formatOnSaveFiletypes": ["typescript", "javascript", "javascript.jsx", "typescript.tsx", "typescriptreact", "javascriptreact", "html"],
         \ 'eslint.filetypes': ["javascript", "javascriptreact", "typescript", "typescriptreact"],
         \ }
-
-" let g:coc_global_extensions = [
-"       \ 'coc-tag',
-"       \ 'coc-css',
-"       \ 'coc-html',
-"       \ 'coc-json',
-"       \ 'coc-prettier',
-"       \ 'coc-vimlsp',
-"       \ 'coc-pairs',
-"       \ 'coc-eslint',
-"       \ 'coc-tsserver',
-"       \ 'coc-angular'
-"       \ ]
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -49,6 +48,10 @@ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gf <Plug>(coc-fix-current)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" Format selection
+vmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
