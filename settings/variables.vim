@@ -1,11 +1,17 @@
 syntax on
 set number
 
-" set timeoutlen=200
+" Show relative numbers
+set relativenumber
+
+" Reduce Command timeout for faster escape and O
+" set timeoutlen=500 ttimeoutlen=0
 
 set mouse=a
 
-set termguicolors     " enable true colors support
+" enable true colors support
+set termguicolors 
+
 set background=dark
 
 set encoding=UTF-8
